@@ -4,5 +4,7 @@ We can use pyautogui to control the keyboard and mouse for test automation. But 
 
 In this solution, we send the screenshot image to an OCR engine. With each text block recognized with its borders, we can use pyautogui to test both browser based or native applications.
 
+Check test.ipynb for usages.
+
 [pyautogui](https://pyautogui.readthedocs.io/en/latest/mouse.html#mouse-scrolling)
 [PaddlePaddle OCR](https://github.com/PaddlePaddle/PaddleOCR)

@@ -66,6 +66,8 @@ def find_and_move_to(to_find, w=0, h=0, document=None, after=None):
 
 import re
 def find_tokens(document, to_find, after=None):
+    if not document:
+        return None
     index = 0
     for item in document:
         text, score = item[1]
