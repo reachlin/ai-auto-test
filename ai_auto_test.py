@@ -80,7 +80,9 @@ def find_tokens(document, to_find, after=None):
                 p0x, p0y = item[0][0]
                 p1x, p1y = item[0][1]
                 p2x, p2y = item[0][2]
-                x = p0x + (p1x - p0x)/3
+                length_text = len(text)
+                bp, ep = match.span()
+                x = p0x + (p1x - p0x)*(bp+1)/length_text
                 y = p0y + (p2y - p0y)/3
                 if after:
                     if index > after:
