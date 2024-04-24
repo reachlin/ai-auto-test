@@ -3,6 +3,7 @@
 # !pip install "paddleocr>=2.0.1"
 
 import pyautogui
+import time
 from PIL import Image
 from paddleocr import PaddleOCR
 
@@ -90,4 +91,15 @@ def find_tokens(document, to_find, after=None):
                 else:
                     return index, x, y, match.group()
         index += 1
+    return None
+
+def wait_for_token(token, retries=3):
+    for i in range(retries):
+        if DEBUG:
+            print(f"wait_for_token: {token} retry {i}")
+        w, h, document = scan_screen()
+        layout = find_tokens(document, token)
+        if layout:
+            return layout
+        time.sleep(3)
     return None
